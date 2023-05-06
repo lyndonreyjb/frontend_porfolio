@@ -1,14 +1,31 @@
-.navbar{
+.navbar {
     display: flex;
-    width:100%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 0rem 2rem;
     position: fixed;
     z-index: 2;
+    background:none;
+    transition: background-color 0.5s ease-out;
 
-  
-}  
+    &.scrolled {
+    background-color: rgba(141, 136, 185, 0.801);
+    }
+}
+
+.socials-link {
+    filter: invert(80%) sepia(100%) hue-rotate(180deg);
+
+    @media screen and (max-width:900px) {
+        display: none;
+    }
+}
+
+
+.menu-socials-link {
+    filter: invert(80%) sepia(100%) hue-rotate(180deg);
+}
 
 .navbar-logo{
     display: flex;
@@ -20,35 +37,35 @@
 .navbar-links{
     flex: 1;
     display: flex;
+    list-style: none;
     justify-content: center;
     align-items: center;
-    list-style: none;
-
     li{ 
-         
         margin:0 1rem;
         cursor:pointer;
         flex-direction: column;
     }
    a {
+        cursor: pointer;
         color: rgba(254, 254, 254, 0.801);
         text-decoration: none;
         font-weight: 500;
         flex-direction: column;
         text-transform: uppercase;
         position: relative;
-
         transition: all 0.3s ease-in-out;
 
         &::before {
-           content: "";
-           position: absolute;
-           bottom: 0;
-           left: 0;
-           width: 0;
-           height: 2px;
-           background-color: rgba(254, 254, 254, 0.801);
-           transition: all 0.3s ease-in-out;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: rgba(254, 254, 254, 0.801);
+            transition: all 0.3s ease-in-out;
+            transform-origin: 50%;
         }
 
        &:hover {
@@ -58,11 +75,26 @@
                width: 100%;
            }
        }
+       
    }
 
-   @media screen and (max-width:900px) {
-    display:none;
-   }
+    @media screen and (max-width:2000px) {
+        display: none;
+        &.scrolled {
+                display: flex;
+            }
+    }
+
+    @media screen and (max-width:1200px) {
+        display: none;
+    }
+    @media screen and (max-width:900px) {
+     display:none;
+        &.scrolled {
+                display: none;
+            }
+    }
+
 }
 
 .navbar-menu{
@@ -76,6 +108,7 @@
     align-items: center;
 
     svg{
+        cursor: pointer;
         width: 70%;
         height: 70%;
         color: #ffffff;
@@ -95,7 +128,7 @@
         justify-self: flex-end;
         align-items: flex-end;
         flex-direction: column;
-        background-color: #6B728E;
+        background-color: #968bba;
         box-shadow: 0 0 2px rgba(255, 255, 255, 0.15);
         svg{
             color: #ffffff;
@@ -120,27 +153,26 @@
             li{
             margin: 1rem;
             
-                a{
+                .menu-links{
                     color: rgba(254, 254, 254, 0.801);
                         text-decoration: none;
                         font-weight: 500;
                         flex-direction: column;
                         text-transform: uppercase;
-                        position: relative;
-
-                        
-                    
+                        position: relative;              
                         transition: all 0.3s ease-in-out;
                     
                         &::before {
                             content: "";
                             position: absolute;
                             bottom: 0;
-                            left: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
                             width: 0;
                             height: 2px;
                             background-color: rgba(254, 254, 254, 0.801);
                             transition: all 0.3s ease-in-out;
+                            transform-origin: 50%;
                         }
                     
                         &:hover {
@@ -161,5 +193,4 @@
         display: none;
     }
 }
-
 
