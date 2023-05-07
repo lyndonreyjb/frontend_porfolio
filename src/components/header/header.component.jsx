@@ -12,6 +12,8 @@ import skills from "../../assets/skills.svg";
 import projects from "../../assets/projects.svg";
 import experience from "../../assets/experience.svg";
 
+import { Wrap } from "../wrap";
+
 const Header = () => {
   const leftLinks = [
     { text: "home", image: home },
@@ -115,4 +117,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Wrap(Header, "home");

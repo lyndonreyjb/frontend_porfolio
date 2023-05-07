@@ -20,7 +20,10 @@
     @media screen and (max-width:900px) {
         display: none;
     }
-}
+        &:hover {
+        filter: invert(65%) sepia(90%) hue-rotate(230deg) brightness(100%);
+        }
+} 
 
 
 .menu-socials-link {
