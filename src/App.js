@@ -1,12 +1,4 @@
-import {
-  Navbar,
-  About,
-  Comments,
-  Footer,
-  Header,
-  Projects,
-  Skills,
-} from "./components";
+import { Navbar, About, Footer, Header, Projects, Skills } from "./components";
 
 import "./App.scss";
 
