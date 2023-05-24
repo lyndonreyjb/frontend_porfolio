@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import profile from "../../assets/profile.png";
+import { Wrap } from "../wrap";
+import { FaDownload } from "react-icons/fa";
 
 import "./about.style.scss";
 import { urlFor, client } from "../../client";
@@ -12,32 +13,40 @@ const About = () => {
     client.fetch(query).then((data) => setAbout(data));
   }, []);
 
+  const handleDownload = () => {
+    // Add logic for file download
+  };
+
   return (
-    <div className="about">
+    <div className="about-page">
+      <div className="about-me">
+        <div>
+          <h1>About Me</h1>
+          <button className="download-button" onClick={handleDownload}>
+            Download Resume
+            <FaDownload className="download-icon" />
+          </button>
+        </div>
+        <p>
+          I'm passionate about web development and creating dynamic and
+          interactive websites, applications, and digital experiences. I'm
+          constantly striving to improve my skills and keep up with the latest
+          trends and technologies in the industry. There's nothing more
+          satisfying than seeing my work come to life on the internet.
+        </p>
+      </div>
+
       <div className="profiles">
         {about.map((about, index) => (
-          <motion.div
-            className="profile-item"
-            key={about.title + index}
-            whileHover={{ scale: 1.1 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, type: "tween" }}>
+          <motion.div className="profile-item" key={about.title + index}>
             <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2>{about.title}</h2>
             <p>{about.description}</p>
           </motion.div>
         ))}
       </div>
-
-      <motion.img
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 1 }}
-        alt="profile"
-        src={profile}
-        className="profile-overlay"
-      />
     </div>
   );
 };
 
-export default About;
+export default Wrap(About, "about");

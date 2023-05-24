@@ -24,44 +24,12 @@ code {
         monospace;
 }
 
+
+
 .app-flex {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.app-container {
-    width: 100%;
-    min-height: 100vh;
 
-    display: flex;
-    flex-direction: row;
-}
-
-
-.navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 1rem;
-
-    .navdot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: #e8f2ff;
-        margin: 0.5rem;
-
-        transition: background-color 0.2s ease-in-out;
-
-        &:hover {
-            background-color: #b317e0;
-        }
-
-        @media screen and (min-width: 2000px) {
-            width: 20px;
-            height: 20px;
-        }
-    }
-}

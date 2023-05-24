@@ -1,12 +1,10 @@
 import React from "react";
-import Navdots from "../navdots/navdots.component";
 
 const Wrap = (Component, idName, classNames) =>
   function HOX() {
     return (
-      <div id={idName} className={`app-container ${classNames} `}>
+      <div id={idName} className={`${classNames} `}>
         <Component />
-        <Navdots active={idName} />
       </div>
     );
   };

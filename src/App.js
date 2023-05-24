@@ -4,14 +4,13 @@ import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Navbar />
       <Header />
       <About />
-      {/* <Skills />
+      <Skills />
       <Projects />
-      <Comments />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
