@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    width: 100%;
+    width: 100vw;
     justify-content: space-between;
     align-items: center;
     padding: 0rem 2rem;
@@ -24,6 +24,8 @@
      display:none   
     }
 }
+
+
 
 .navbar-logo{
     display: flex;
@@ -105,6 +107,13 @@
     justify-content: center;
     align-items: center;
 
+
+    .navbar-menu-icons {
+            width: 15px;
+            height: 15px;
+    
+        }
+
     svg{
         cursor: pointer;
         width: 70%;
@@ -146,6 +155,7 @@
             text-transform: uppercase;
             position: relative;
 
+           
             li{
             margin: 1rem;
             
@@ -179,6 +189,7 @@
                             }
                         }
                 }
+
             }
         } 
         @media screen and (min-width:900px) {

@@ -5,16 +5,18 @@ import { FaDownload } from "react-icons/fa";
 
 import "./about.style.scss";
 import { urlFor, client } from "../../client";
-
+import resume from "./resume.pdf";
 const About = () => {
   const [about, setAbout] = useState([]);
+
   useEffect(() => {
     const query = '*[_type == "about"]';
     client.fetch(query).then((data) => setAbout(data));
   }, []);
 
-  const handleDownload = () => {
-    // Add logic for file download
+  const handleDownloadResume = () => {
+    // Replace "resume.pdf" with the actual URL or path to your PDF file
+    window.open(resume, "_blank");
   };
 
   return (
@@ -22,8 +24,9 @@ const About = () => {
       <div className="about-me">
         <div>
           <h1>About Me</h1>
-          <button className="download-button" onClick={handleDownload}>
-            Download Resume
+
+          <button className="download-button" onClick={handleDownloadResume}>
+            View Resume
             <FaDownload className="download-icon" />
           </button>
         </div>

@@ -66,7 +66,7 @@ const Navbar = () => {
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {toggle && (
           <motion.div
-            whileInView={{ x: [300, 0] }}
+            whileInView={{ x: [100, 0] }}
             transition={{ duration: 0.85, ease: "easeOut" }}>
             <HiX onClick={() => setToggle(false)} />
             <ul>
@@ -82,27 +82,28 @@ const Navbar = () => {
                   </li>
                 )
               )}
-
-              <li className="app-flex p-text">
-                <a
-                  href="https://github.com/lyndonreyjb"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <FaGithub />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/lyndon-rey-bualat/"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <FaLinkedin />
-                </a>
-                <a
-                  href="https://www.instagram.com/l_reyb/"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <FaInstagram />
-                </a>
-              </li>
+              <IconContext.Provider value={{ className: "navbar-menu-icons" }}>
+                <li className="app-flex">
+                  <a
+                    href="https://github.com/lyndonreyjb"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <FaGithub />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/lyndon-rey-bualat/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <FaLinkedin />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/l_reyb/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <FaInstagram />
+                  </a>
+                </li>
+              </IconContext.Provider>
             </ul>
           </motion.div>
         )}
