@@ -28,12 +28,12 @@
     padding: 1rem;
     .skills-item {
         img {
-            height: 60px;
-            width: 60px;
+            height: 40px;
+            width: 40px;
         }
     }
 
     @media screen and (max-width:900px) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }

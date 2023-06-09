@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { HiMenuAlt4, HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
 import Logo from "../../assets/logo.svg";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
+import { links, social } from "./data";
 import { IconContext } from "react-icons";
 import "./navbar.style.scss";
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuContainerRef = useRef(null);
+  const menuRef = useRef(null);
 
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -26,87 +30,48 @@ const Navbar = () => {
     };
   }, []);
 
+  const menuStyles = {
+    height: showMenu
+      ? `${menuRef.current.getBoundingClientRect().height}px`
+      : "0px",
+  };
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="navbar-logo">
-        <img src={Logo} alt="logo" />
-      </div>
-      <IconContext.Provider value={{ className: "navbar-icons" }}>
-        <ul className={`navbar-links ${scrolled ? "scrolled" : ""}`}>
-          {["home", "about", "skills", "projects", "contact"].map((item) => (
-            <li className="app-flex p-text" key={`link-${item}`}>
-              <a href={`#${item}`}>{item}</a>
-            </li>
-          ))}
-        </ul>
-        <ul className="socials">
-          <li className="app-flex p-text">
-            <a
-              href="https://github.com/lyndonreyjb"
-              target="_blank"
-              rel="noopener noreferrer">
-              <FaGithub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/lyndon-rey-bualat/"
-              target="_blank"
-              rel="noopener noreferrer">
-              <FaLinkedin />
-            </a>
-            <a
-              href="https://www.instagram.com/l_reyb/"
-              target="_blank"
-              rel="noopener noreferrer">
-              <FaInstagram />
-            </a>
-          </li>
-        </ul>
-      </IconContext.Provider>
-      <div className="navbar-menu">
-        <HiMenuAlt4 onClick={() => setToggle(true)} />
-        {toggle && (
-          <motion.div
-            whileInView={{ x: [100, 0] }}
-            transition={{ duration: 0.85, ease: "easeOut" }}>
-            <HiX onClick={() => setToggle(false)} />
-            <ul>
-              {["home", "skills", "projects", "about", "contact"].map(
-                (item) => (
-                  <li className="app-flex p-text" key={item}>
-                    <a
-                      className="menu-links"
-                      href={`#${item}`}
-                      onClick={() => setToggle(true)}>
-                      {item}{" "}
-                    </a>
-                  </li>
-                )
-              )}
-              <IconContext.Provider value={{ className: "navbar-menu-icons" }}>
-                <li className="app-flex">
-                  <a
-                    href="https://github.com/lyndonreyjb"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <FaGithub />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/lyndon-rey-bualat/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <FaLinkedin />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/l_reyb/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <FaInstagram />
-                  </a>
+      <div className="nav-center">
+        <div className="navbar-header">
+          <img src={Logo} className="logo" alt="logo" />
+          <button className="nav-toggle" onClick={toggleMenu}>
+            <FaBars />
+          </button>
+        </div>
+
+        <div
+          className="menu-container"
+          ref={menuContainerRef}
+          style={menuStyles}>
+          <ul className="menu" ref={menuRef}>
+            {links.map((link) => {
+              const { id, url, text } = link;
+              return (
+                <li key={id}>
+                  <a href={url}>{text}</a>
                 </li>
-              </IconContext.Provider>
-            </ul>
-          </motion.div>
-        )}
+              );
+            })}
+          </ul>
+        </div>
+        <IconContext.Provider value={{ className: "react-icons" }}>
+          <ul className="social-icons">
+            {social.map((socialIcon) => {
+              const { id, url, icon } = socialIcon;
+              return (
+                <li key={id}>
+                  <a href={url}>{icon}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </IconContext.Provider>
       </div>
     </nav>
   );

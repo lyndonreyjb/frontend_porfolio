@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { urlFor, client } from "../../client";
 import "./skills.style.scss";
 import { Wrap } from "../wrap";
@@ -21,7 +20,7 @@ const Skills = () => {
         {skills.map((skills, index) => (
           <div className="skills-item" key={skills.name + index}>
             <img src={urlFor(skills.icon)} alt={skills.name} />
-            <h3> {skills.name}</h3>
+            <h4> {skills.name}</h4>
           </div>
         ))}
       </div>
