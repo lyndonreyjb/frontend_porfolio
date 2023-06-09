@@ -19,6 +19,21 @@ body::-webkit-scrollbar-thumb {
     /* creates padding around scroll thumb */
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
 #root {
 font-family: 'Poppins', sans-serif;
 }
