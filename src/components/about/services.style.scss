@@ -1,0 +1,94 @@
+.profiles {
+    color: #302d3e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    width: 100%;
+    min-height: 100vh ;
+
+    .offer {
+    text-align: center;
+    padding: 2rem;
+    width: 50rem;
+
+    @media screen and (max-width: 900px) {
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+        }
+    }
+
+  
+
+.services {
+   
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    padding: 1rem;
+    gap: 1rem;
+
+    @media screen and (max-width: 900px) {
+        padding: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        width: 100%;
+        gap: 0;
+        .profile-item {
+            margin-bottom: 1rem;
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+        .profile-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+            align-items: center;
+    
+            img {
+                object-fit: cover;
+                height: 90px;
+                width: 90px;
+                border-radius: 50%;
+            }
+    
+            h2 {
+                margin-top: 20px;
+            }
+    
+            p {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+}
+
+
+    @media screen and (max-width:900px) {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+
+        .profile-item {
+            margin-bottom: 1rem;
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+}

@@ -1,52 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Wrap } from "../wrap";
 import { FaDownload } from "react-icons/fa";
-
+import aboutPic from "../../assets/about.jpg";
 import "./about.style.scss";
-import { urlFor, client } from "../../client";
+
 import resume from "./resume.pdf";
 const About = () => {
-  const [about, setAbout] = useState([]);
-
-  useEffect(() => {
-    const query = '*[_type == "about"]';
-    client.fetch(query).then((data) => setAbout(data));
-  }, []);
-
   const handleDownloadResume = () => {
-    // Replace "resume.pdf" with the actual URL or path to your PDF file
     window.open(resume, "_blank");
   };
 
   return (
     <div className="about-page">
-      <div className="about-me">
-        <div>
-          <h1>About Me</h1>
-
-          <button className="download-button" onClick={handleDownloadResume}>
-            View Resume
-            <FaDownload className="download-icon" />
-          </button>
-        </div>
-        <p>
-          I'm passionate about web development and creating dynamic and
-          interactive websites, applications, and digital experiences. I'm
-          constantly striving to improve my skills and keep up with the latest
-          trends and technologies in the industry. There's nothing more
-          satisfying than seeing my work come to life on the internet.
-        </p>
+      <div className="about-images">
+        <img className="about-pic" src={aboutPic} alt="my-pic" />
       </div>
 
-      <div className="profiles">
-        {about.map((about, index) => (
-          <motion.div className="profile-item" key={about.title + index}>
-            <img src={urlFor(about.imgUrl)} alt={about.title} />
-            <h2>{about.title}</h2>
-            <p>{about.description}</p>
-          </motion.div>
-        ))}
+      <div className="about-section">
+        <div>
+          <h1>About Me</h1>
+        </div>
+        <div className="me-section">
+          <p>
+            I am passionate about crafting immersive and captivating digital
+            experiences by creating dynamic and interactive websites and
+            applications. I am always motivated to improve my skills and stay
+            up-to-date with the latest industry trends and technologies. Seeing
+            my work come to life on the internet brings me great satisfaction
+            and a sense of fulfillment.
+          </p>
+        </div>
+        <button className="download-button" onClick={handleDownloadResume}>
+          View Resume
+          <FaDownload className="download-icon" />
+        </button>
       </div>
     </div>
   );

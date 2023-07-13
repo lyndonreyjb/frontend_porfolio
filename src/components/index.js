@@ -4,3 +4,5 @@ export { default as Footer } from "./footer/footer.component";
 export { default as Header } from "./header/header.component";
 export { default as Skills } from "./skills/skills.component";
 export { default as Projects } from "./projects/projects.component";
+export { default as Contact } from "./contact/contact.component";
+export { default as Services } from "./about/services.component";
