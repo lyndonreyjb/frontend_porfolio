@@ -34,18 +34,12 @@ export const links = [
   },
   {
     id: 4,
-    url: "skills",
-    text: "skills",
-    icon: <FaCode />,
-  },
-  {
-    id: 5,
     url: "projects",
     text: "projects",
     icon: <FaProjectDiagram />,
   },
   {
-    id: 6,
+    id: 5,
     url: "contact",
     text: "contact",
     icon: <FaMailBulk />,

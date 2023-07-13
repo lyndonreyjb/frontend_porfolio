@@ -11,16 +11,17 @@ const Skills = () => {
   }, []);
   return (
     <div className="skill-container">
-      <div className="skill-description">
-        <div>
-          <h1>My skills and tools</h1>
-        </div>
+      <div className="title">
+        <h3>My tech stack</h3>
       </div>
+
       <div className="skills">
         {skills.map((skills, index) => (
           <div className="skills-item" key={skills.name + index}>
-            <img src={urlFor(skills.icon)} alt={skills.name} />
-            <h4> {skills.name}</h4>
+            <div>
+              <img src={urlFor(skills.icon)} alt={skills.name} />
+              <p> {skills.name}</p>
+            </div>
           </div>
         ))}
       </div>
