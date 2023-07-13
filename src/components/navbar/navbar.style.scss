@@ -1,49 +1,151 @@
 .navbar{
-    width: 100vw;
-    position: fixed;
+    width: 15%;
+    height: 100%;
+    position: relative;
     z-index: 2;
-    backdrop-filter: blur(10px);
+    position: fixed;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    @media screen and (max-width: 900px) {
+    width: 100%;
+    position: fixed;
+    }    
+          @media screen and (min-width: 900px) {
+             background-color: #484fb6;
+          }
 }
 
-.navbar-header {
+.navbar-collapse {
     display: flex;
+    background-color: #484fb6;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    border-bottom: 2px solid #6068de;
+    @media screen and (max-width: 900px) {
+         padding: 1rem;
+     
+        border-bottom: none;
+    }
+}
+
+.nav-center {
+  
+    height: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
     
+}
+
+.nav-icons{
+ display: flex;
+ gap: 1rem;
+
+ .nav-link-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    font-size:x-large
+ }
+    .nav-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+    }
+}
+
+
+
+.logo-container{
+padding: 1rem;
+@media screen and (max-width: 900px) {
+        padding: 0rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    .navbar-header {
+        padding: 0;
+    }
+
+
+    .menu-container {
+        height: auto !important;
+    }
+
+    .menu {
+        display: block;
+        padding: 1rem;
+
+        a {
+            margin-top: 0.5rem;
+            color: #ffffff;
+            background: none;
+            border-radius: 15px;
+            text-transform: capitalize;
+            display: block;
+            transition: 0.3s ease-in-out all; 
+            padding: 0.5rem;
+            &:hover {
+                color: #ffffff;
+                background-color: #403b9d;
+                padding-left: 1.5rem;
+            }
+        }
+    }
+
+    .react-icons {
+        color: rgb(251, 251, 251);
+        width: 20px;
+        height: 20px;
+        transition: 0.3s ease-in-out all;
+
+        &:hover {
+            color: #9598ee;
+        }
+    }
+
+    .nav-socials{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+     
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
 }
 
 .logo{
     display: flex;
-    height: 40px;
+    height: 70px;
+    @media screen and (max-width: 900px) {
+        height: 50px;
+        }
 }
 
 .nav-toggle {
   font-size: 1.5rem;
-  color: #6763c8;
+  color: #ffff;
   background: transparent;
   border-color: transparent;
   transition: 0.3s ease-in-out all;
   cursor: pointer;
   &:hover {
-    color: #cfd0e7;
-    }
-}
-
-.menu a{
-    text-transform: capitalize;
-    color: #433f99;
-    font-size: rem;
-    display: block;
-    transition: 0.3s ease-in-out all;
-
-    padding: 0.5rem 1rem;
-
-    &:hover{
-        background: #cfd0e7;
-        color: #6763c8;
-        padding-left: 1.5rem;
+    color: #6763c8;
     }
 }
 
@@ -52,80 +154,27 @@
     transition: 0.3s ease-in-out all;
 }
 
-.social-icons{
-    display: none;
-}
-
-@media screen and (min-width: 900px){
-    .nav-toggle{
-        display: none;
-    }
-    .navbar-header{
-        padding: 0;
-    }
-
-    .nav-center {
-        max-width: 100vw;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-    }
-
-    .menu-container{
-        height: auto !important;
-    }
-    .menu{
-        display: flex;
-        gap: 2rem;
-        a{
-            color: #6763c8;
-            background: none;
-            padding: 0;
-           
-            &:hover{
-                padding: 0;
-                color: #cfd0e7;             
-                background:none;
-               
-            }
-        }
-    }
-
-    .react-icons {
-        color: #6763c8;
-        width: 25px;
-        height: 25px;
-        color: #6763c8;
-            transition: 0.3s ease-in-out all;
-        
-            &:hover {
-                color: #cfd0e7;
-            }
-    }
-    .social-icons{
-        display: flex;
-        gap: 0.5rem;      
-    }
-
-}
 
 @media screen and (max-width: 900px) {
-.menu a {
+.menu 
+
+a {
         text-transform: capitalize;
-        color: #d8d6ff;
+        color: #403b9d;
         font-size: rem;
         display: block;
         transition: 0.3s ease-in-out all;
-        background: #6763c8;
+        background: #f9f8fb;
         padding: 0.5rem 1rem;
-
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         &:hover {
-            background: #cfd0e7;
-            color: #6763c8;
+            background-color: #403b9d;
+            color: white;
             padding-left: 1.5rem;
         }
     }
+        .social-icons {
+            display: none;
+        }
 }
 

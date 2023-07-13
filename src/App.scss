@@ -10,11 +10,11 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #fff1d3;
+    background-color: #484fb6;
     /* color of the scroll thumb */
     border-radius: 20px;
     /* roundness of the scroll thumb */
-    border: 3px solid #e3dfe294;
+    border: 3px solid #484fb6;
     ;
     /* creates padding around scroll thumb */
 }
@@ -28,22 +28,16 @@ ul {
     padding: 0;
 }
 
-.img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-}
 
 #root {
 font-family: 'Poppins', sans-serif;
 }
 
-
-
-.app-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.app-grid {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    @media screen and (max-width: 900px) {
+    display: block;
+        }
 }
-
 
