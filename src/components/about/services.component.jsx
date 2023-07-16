@@ -46,9 +46,11 @@ const Services = () => {
           {about.map((aboutItem, index) => (
             <SwiperSlide key={aboutItem.title + index}>
               <div className="profile-item">
-                <h2>{aboutItem.title}</h2>
-                <p>{aboutItem.description}</p>
-                {/* <img src={urlFor(aboutItem.imgUrl)} alt={aboutItem.title} /> */}
+                <img src={urlFor(aboutItem.imgUrl)} alt={aboutItem.title} />
+
+                <h3>{aboutItem.title}</h3>
+
+                {/* <p>{aboutItem.description}</p> */}
               </div>
             </SwiperSlide>
           ))}
