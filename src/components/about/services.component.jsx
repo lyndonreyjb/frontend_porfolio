@@ -1,16 +1,30 @@
-import { motion } from "framer-motion";
 import { urlFor, client } from "../../client";
 import { useState, useEffect } from "react";
 import { Wrap } from "../wrap";
 import "./services.style.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { useMediaQuery } from "react-responsive";
 
 const Services = () => {
   const [about, setAbout] = useState([]);
+  const isMobile = useMediaQuery({ maxWidth: 900 });
 
   useEffect(() => {
     const query = '*[_type == "about"]';
     client.fetch(query).then((data) => setAbout(data));
   }, []);
+
+  const getSlidesPerView = () => {
+    if (isMobile) {
+      return 1;
+    } else {
+      return 3;
+    }
+  };
+
   return (
     <div id="services">
       <div className="profiles">
@@ -21,16 +35,24 @@ const Services = () => {
             development, front-end development, web design, and graphic design.
           </p>
         </div>
-
-        <div className="service">
-          {about.map((about, index) => (
-            <motion.div className="profile-item" key={about.title + index}>
-              {/* <img src={urlFor(about.imgUrl)} alt={about.title} /> */}
-              <h2>{about.title}</h2>
-              <p>{about.description}</p>
-            </motion.div>
+        <Swiper
+          slidesPerView={getSlidesPerView()}
+          spaceBetween={20}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper">
+          {about.map((aboutItem, index) => (
+            <SwiperSlide key={aboutItem.title + index}>
+              <div className="profile-item">
+                <h2>{aboutItem.title}</h2>
+                <p>{aboutItem.description}</p>
+                {/* <img src={urlFor(aboutItem.imgUrl)} alt={aboutItem.title} /> */}
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </div>
   );
