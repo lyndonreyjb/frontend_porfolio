@@ -1,51 +1,41 @@
-
-
-.skill-container{
-    color: #322f40; 
+.skill-container {
+    color: #322f40;
     display: flex;
     flex-direction: column;
-    @media screen and (max-width:1200px) {
-        
-            .title{
-                margin-left: 1rem;
-                margin-right: 1rem;
-            }
+
+    @media screen and (max-width: 1200px) {
+        .title {
+            margin-left: 1rem;
+            margin-right: 1rem;
         }
+    }
 
     .skills {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
         gap: 1rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
+
+        @media screen and (max-width: 992px) {
+            padding: 1rem;
+        }
+
         .skills-item {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            text-align: center;
-            p{
-               font-size: 10px;
-            }
-            img {
-                
-                height: 40px;
-                width: 40px;
-            }
-        }
-        @media screen and (max-width:900px) {
-            padding: 1rem;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            align-items: center;
 
-            .skills-item {
-                    img {
-                        
-                        height: 30px;
-                        width: 30px;
-                    }
-                }
+            p {
+                font-size: 10px;
+            }
+
+            img {
+                height: 30px;
+                width: 30px;
+            }
         }
     }
 }
-
-
-

@@ -5,27 +5,34 @@ import {
   Footer,
   Header,
   Projects,
-  Skills,
   Services,
 } from "./components";
-
+import ScrollToTop from "react-scroll-to-top";
+import { FaArrowUp } from "react-icons/fa";
 import "./App.scss";
 
 function App() {
   return (
     <div className="app">
       <div className="app-grid">
-        <div>
+        <div className="sidebar">
           <Navbar />
         </div>
         <div>
           <Header />
           <About />
           <Services />
-          {/* <Skills /> */}
           <Projects />
           <Contact />
           <Footer />
+          <ScrollToTop
+            smooth
+            component={
+              <div className="scroll-top">
+                <FaArrowUp />
+              </div>
+            }
+          />
         </div>
       </div>
     </div>
