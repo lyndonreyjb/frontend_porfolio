@@ -15,8 +15,7 @@
         flex-wrap: wrap;
         justify-content: start;
         gap: 1rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding: 1rem;
 
         @media screen and (max-width: 992px) {
             padding: 1rem;
