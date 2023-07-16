@@ -16,6 +16,11 @@
     padding-bottom: 7rem;
     width: 70%;
 
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+        padding: 1rem;
+    }
+
     @media screen and (max-width: 900px) {
     width: 100%;    
     }

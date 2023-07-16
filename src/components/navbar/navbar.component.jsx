@@ -26,7 +26,6 @@ const Navbar = () => {
         <div className="navbar-collapse">
           <div className="logo-container">
             <a href={`#home`}>
-              {" "}
               <img src={Logo} className="logo" alt="logo" />
             </a>
           </div>

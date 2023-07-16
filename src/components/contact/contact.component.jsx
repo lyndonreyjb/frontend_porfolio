@@ -38,8 +38,10 @@ const Contact = () => {
       <div className="contact-container">
         <div className="chat-container">
           <div>
-            <h1>Any questions?</h1>
-            <h1>Have a chat with me</h1>
+            <div>
+              <h1>Any questions?</h1>
+              <h1>Have a chat with me</h1>
+            </div>
             <div className="mail-box">
               <MdEmail className="email-icon" />
               <div className="mail-to">
