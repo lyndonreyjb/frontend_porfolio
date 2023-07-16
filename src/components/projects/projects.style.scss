@@ -16,8 +16,15 @@
 
     h1{
     padding: 1rem;
-      font-size: 3rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #373c88;
+    @media screen and (max-width: 900px) {
+            padding: 0;
+        }
     }
+
+   
 
     @media screen and (max-width: 1200px) {
         width: 100%;
