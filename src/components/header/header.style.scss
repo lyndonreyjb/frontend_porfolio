@@ -38,7 +38,7 @@
 
 
 .header-badge {   
-    color: #433f99;
+    color: #373c88;
     width: 40%;
 
     .badge-cmp {
@@ -61,7 +61,7 @@
     @media screen and (max-width: 900px) {
         width: 100%;    
     }
-    @media only screen and (max-width: 1200px) and (min-width: 900px) {
+    @media only screen and (max-width: 1200px)  {
         width: 100%;
     }
 }
@@ -83,8 +83,14 @@
         margin: auto;
         @media screen and (max-width: 900px) {
             height: 20rem;
-                width: 20rem;;
+            width: 20rem;;
             }
+
+            @media screen and (max-width: 400px) {
+                height: 15rem;
+                width: 15rem;
+            }
+        
         }
         
     
@@ -100,6 +106,11 @@
                     height: 20rem;
                     width: 20rem;
                     ;
+            }
+
+            @media screen and (max-width: 400px) {
+                height: 15rem;
+                width: 15rem;
             }
             
         
