@@ -1,12 +1,12 @@
 import { urlFor, client } from "../../client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Wrap } from "../wrap";
-import "./services.style.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { useMediaQuery } from "react-responsive";
+import "./services.style.scss";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Services = () => {
   const [about, setAbout] = useState([]);
@@ -35,28 +35,19 @@ const Services = () => {
             development, front-end development, web design, and graphic design.
           </p>
         </div>
-        <Swiper
-          slidesPerView={getSlidesPerView()}
-          spaceBetween={20}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper">
+        <div className="mySwiper">
           {about.map((aboutItem, index) => (
-            <SwiperSlide key={aboutItem.title + index}>
+            <div key={aboutItem.title + index}>
               <div className="profile-item">
                 <div>
                   <img src={urlFor(aboutItem.imgUrl)} alt={aboutItem.title} />
                 </div>
-
                 <h3>{aboutItem.title}</h3>
-
-                {/* <p>{aboutItem.description}</p> */}
+                <p>{aboutItem.description}</p>
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
+        </div>
       </div>
     </div>
   );
