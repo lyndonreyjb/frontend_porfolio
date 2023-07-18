@@ -54,7 +54,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="email-container">
-          <h3>Send me a message</h3>
+          <h2>Send me a message</h2>
           {!isFormSubmitted ? (
             <div className="contact-form">
               <div>

@@ -23,6 +23,12 @@
 }
 
 .chat-container {
+
+    h1{
+        color: #302e69;
+    }
+
+ 
    
     .email-icon {
         padding: 1rem;
@@ -45,6 +51,7 @@
 }
 
 .mail-box {
+    background-color: #ffffff;
     margin-top: 1rem;
     display: flex;
     gap: 1rem;
@@ -60,11 +67,14 @@
 
 
 .email-container {
+    background-color: #ffffff;
     width: 50%;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-
+    h2 {
+            color: #302e69;
+    }
     @media screen and (max-width:900px) {
         width: 100%;
         margin-top: 1rem;
@@ -81,6 +91,7 @@
 
 
         input {
+            
             height: 3rem;
             width: 100%;
             padding: 10px;
@@ -92,6 +103,7 @@
         }
 
         textarea {
+            resize: none;
             height: 10rem;
             width: 100%;
             padding: 10px;
@@ -107,20 +119,36 @@
         }
 
         button {
-            height: 3rem;
-            background-color: #484fb6;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
+            display: flex;
+            gap: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-
-            &:hover {
-                background-color: #7b83eb;
-            }
-
-
+           
+                margin-top: 1rem;
+                display: flex;
+                gap: 0.3rem;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                background-color: #5761e8;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                transition: ease-in-out, 0.5s;
+              
+                font-family: 'Poppins', sans-serif;
+                font-size: 1rem;
+                color: #fafafa;
+                @media only screen and (max-width: 900px) {
+                    font-size: 0.8rem;
+                }
+                
+                &:hover {
+                    background-color: #666edd;
+                    .project-icon {
+                        color: #fafaff;
+                    }
+                }
+            
         }
     }
 
