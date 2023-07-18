@@ -25,14 +25,12 @@ const Services = () => {
         </div>
         <div className="mySwiper">
           {about.map((aboutItem, index) => (
-            <div key={aboutItem.title + index}>
-              <div className="profile-item">
-                <div>
-                  <img src={urlFor(aboutItem.imgUrl)} alt={aboutItem.title} />
-                </div>
-                <h3>{aboutItem.title}</h3>
-                <p>{aboutItem.description}</p>
+            <div className="profile-item" key={aboutItem.title + index}>
+              <div>
+                <img src={urlFor(aboutItem.imgUrl)} alt={aboutItem.title} />
               </div>
+              <h3>{aboutItem.title}</h3>
+              <p>{aboutItem.description}</p>
             </div>
           ))}
         </div>
