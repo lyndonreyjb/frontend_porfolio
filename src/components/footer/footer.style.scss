@@ -1,36 +1,16 @@
 .footer {
     display: flex;
-    background-color: #4f49c1;
+    background-color: #484fb6;
     justify-content: center;
     position: relative;
     padding: 1rem;
     width: 100%;   
-    color: rgba(255, 255, 255, 0.612);
+    color: rgba(255, 255, 255, 0.803);
     @media screen and (max-width:1200px) {
             width: 100%;
         }
     }
 
 
-.footer-icons {
-        color: white;
-        width: 20px;
-        height: 20px;
-        transition: 0.3s ease-in-out all;
-        
-    
-        &:hover {
-            color: #9598ee;
-        }
-}
-
-
-
-
-.footer-social-icons{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
 
 

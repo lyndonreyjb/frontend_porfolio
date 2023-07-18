@@ -1,7 +1,7 @@
-import React from "react";
+import { useContext } from "react";
+import { ProjectContext } from "../../ProjectContext.jsx";
 import { urlFor } from "../../client";
-import { AiFillGithub } from "react-icons/ai";
-import { RiComputerLine } from "react-icons/ri";
+
 const ProjectItem = ({
   title,
   description,
@@ -11,15 +11,27 @@ const ProjectItem = ({
   tags,
 }) => {
   const imageUrl = urlFor(imgUrl);
+  const { selectItem, setIsOpen } = useContext(ProjectContext);
+
   const handleClick = () => {
-    // Handle the onClick event here
-    console.log("Project info clicked!");
-    // You can perform any necessary actions or navigate to a different page
+    setIsOpen(true);
+    selectItem({
+      title,
+      description,
+      imgUrl,
+      projectLink,
+      codeLink,
+      tags,
+    });
   };
+
   return (
     <div>
       <div className="project-item">
         <div className="project-info" onClick={handleClick}>
+          <div className="img-container">
+            <img src={imageUrl} alt={title} />
+          </div>
           <div className="project-details">
             <div className="project-links">
               <div>
@@ -41,9 +53,6 @@ const ProjectItem = ({
                 </div>
               </div>
             </div>
-          </div>
-          <div className="img-container">
-            <img src={imageUrl} alt={title} />
           </div>
         </div>
       </div>

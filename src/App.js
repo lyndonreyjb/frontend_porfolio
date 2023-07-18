@@ -6,6 +6,7 @@ import {
   Header,
   Projects,
   Services,
+  ProjectDetail,
 } from "./components";
 import ScrollToTop from "react-scroll-to-top";
 import { FaArrowUp } from "react-icons/fa";
@@ -23,6 +24,7 @@ function App() {
           <About />
           <Services />
           <Projects />
+          <ProjectDetail />
           <Contact />
           <Footer />
           <ScrollToTop

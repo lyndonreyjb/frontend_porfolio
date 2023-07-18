@@ -1,39 +1,43 @@
 .skill-container {
-    color: #322f40;
-    display: flex;
-    flex-direction: column;
+    h1{
+        color: #373c88;
+    }
+      
 
     @media screen and (max-width: 1200px) {
         .title {
-            margin-left: 1rem;
-            margin-right: 1rem;
+            padding: 1rem;
         }
     }
 
     .skills {
+       
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
         gap: 1rem;
-        padding: 1rem;
 
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width: 1200px) {
             padding: 1rem;
         }
 
         .skills-item {
+
+            div{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            }
+     
 
             p {
-                font-size: 10px;
+                font-size: 0.7rem;
             }
 
             img {
-                height: 30px;
-                width: 30px;
+                height: 2rem;
+                width: 2rem;
             }
         }
     }

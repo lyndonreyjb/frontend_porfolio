@@ -12,7 +12,7 @@ const Skills = () => {
   return (
     <div className="skill-container">
       <div className="title">
-        <h3>My tech stack</h3>
+        <h1>My Tools and Skills</h1>
       </div>
 
       <div className="skills">
