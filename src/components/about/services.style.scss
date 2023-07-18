@@ -20,11 +20,6 @@
                 padding: 0;
             }
 
-        @media screen and (max-width: 900px) {
-            width: 100%;
-            padding: 0rem;
-            
-        }
 
         h1 {
             color: #302e69;
@@ -46,13 +41,12 @@
 
         .mySwiper {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
             width: 100%;
-            padding: 1rem;
             @media only screen and (max-width: 1200px) {
-                    width: 100%;
+                    width: 80%;
                     padding: 1rem;
                 }
             @media only screen and (max-width: 900px) {
@@ -71,6 +65,17 @@
                     border-radius: 8px;
                     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 
+                    @media only screen and (max-width: 900px) {
+                        width: 20rem;
+                            
+                    }
+                    @media only screen and (max-width: 700px) {
+                        width: 100%;
+
+                    }
+
+              
+
                     h3 {
                         color: #302e69;
                     }
@@ -83,36 +88,10 @@
 
                     img{
                        
-                        height: 5rem;
-                        width: 5rem;
+                        height: 3rem;
+                        width: 3rem;
                     }
                 }
-
-            .swiper-pagination {
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-
-                .swiper-pagination-bullet {
-                    width: 8px;
-                    height: 8px;
-                    border-radius: 50%;
-                    background-color: #bbb;
-                    opacity: 1;
-                    transition: opacity 0.2s;
-
-                    &.swiper-pagination-bullet-active {
-                        opacity: 1;
-                        background-color: #3f07a1;
-                    }
-                }
-            }
-
         
         }
     }
