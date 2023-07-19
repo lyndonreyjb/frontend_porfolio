@@ -85,12 +85,11 @@
         @media screen and (max-width: 900px) {
             height: 20rem;
             width: 20rem;;
-            }
-
-            @media screen and (max-width: 400px) {
-                height: 15rem;
-                width: 15rem;
-            }
+        }
+        @media screen and (max-width: 500px) {
+            height: 14rem;
+            width: 14rem;
+        }
         
         }
         
@@ -108,10 +107,10 @@
                     width: 20rem;
                     ;
             }
-
-            @media screen and (max-width: 400px) {
-                height: 15rem;
-                width: 15rem;
+            
+            @media screen and (max-width: 500px) {
+                height: 14rem;
+                width: 14rem;
             }
             
         
