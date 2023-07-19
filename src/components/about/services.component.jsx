@@ -29,7 +29,7 @@ const Services = () => {
               <div>
                 <img src={urlFor(aboutItem.imgUrl)} alt={aboutItem.title} />
               </div>
-              <h3>{aboutItem.title}</h3>
+              <h4>{aboutItem.title}</h4>
               <p>{aboutItem.description}</p>
             </div>
           ))}
