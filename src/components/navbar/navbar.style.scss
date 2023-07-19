@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center;
     width: 2rem;
-    font-size:x-large;
+    font-size:1.3rem;
     @media only screen and (max-width: 1200px) and (min-width: 900px) {
     width: 100%;
     font-size: 1.3rem;
@@ -50,6 +50,7 @@
     
  }
     .nav-text {
+        font-size: 0.9rem;
         display: flex;
         justify-content: center;
         align-items: center;
