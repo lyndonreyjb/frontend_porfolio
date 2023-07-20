@@ -59,17 +59,12 @@ export const social = [
   },
   {
     id: 3,
-    url: "https://www.twitter.com",
+    url: "https://www.instagram.com/l_reyb/",
     icon: <FaInstagram />,
   },
   {
     id: 4,
-    url: "https://www.twitter.com",
-    icon: <FaFacebook />,
-  },
-  {
-    id: 5,
-    url: "https://www.twitter.com",
+    url: "https://www.youtube.com/channel/UCRLZEISj9e0XK7Uinvm-YNg",
     icon: <FaYoutube />,
   },
 ];
