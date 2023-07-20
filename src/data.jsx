@@ -1,13 +1,6 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaFacebook,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
 import {
   FaHome,
-  FaCode,
   FaProjectDiagram,
   FaMailBulk,
   FaInfoCircle,
