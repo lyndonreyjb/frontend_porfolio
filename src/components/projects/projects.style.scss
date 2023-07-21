@@ -220,26 +220,21 @@
     .sidebar-content {
         height: 100%;
         width: 100%;
-        
-        @media only screen and (max-width: 1200px) {
-            overflow-y: auto;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 10px;
         }
 
-                &::-webkit-scrollbar {
-                    width: 10px;
-                    /* width of the entire scrollbar */
-                }
-        
-                &::-webkit-scrollbar-track {
-                    background: #939ea9;
-                    
-                }
-        
-                &::-webkit-scrollbar-thumb {
-                    background-color: #484fb6;
-                    border: 3px solid #484fb6;
-    
-                }
+        &::-webkit-scrollbar-track {
+            background: #939ea9;
+            
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #484fb6;
+            border: 3px solid #484fb6;
+        }
 
         .project-content {
             
@@ -264,9 +259,9 @@
             }
 
             .desc {
-                @media only screen and (max-width: 1200px) {
-                    font-size: 0.9rem;
-                }
+                
+                    font-size: 0.8rem;
+                
             }
 
             .tags {
@@ -284,7 +279,7 @@
                     color: #fafafa;
                     background-color: #666edd;
                     border-radius: 15px;
-                    font-size: 0.9rem;
+                    font-size: 0.8rem;
 
                     @media only screen and (max-width: 1200px) {
                         font-size: 0.7rem;
@@ -313,7 +308,7 @@
 
                     p {
                         font-family: 'Poppins', sans-serif;
-                        font-size: 1rem;
+                        font-size: small;
                         color: #fafafa;
 
                         @media only screen and (max-width: 900px) {

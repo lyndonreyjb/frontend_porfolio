@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import {
   FaHome,
   FaProjectDiagram,
@@ -54,10 +54,5 @@ export const social = [
     id: 3,
     url: "https://www.instagram.com/l_reyb/",
     icon: <FaInstagram />,
-  },
-  {
-    id: 4,
-    url: "https://www.youtube.com/channel/UCRLZEISj9e0XK7Uinvm-YNg",
-    icon: <FaYoutube />,
   },
 ];
