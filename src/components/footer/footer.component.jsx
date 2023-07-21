@@ -3,7 +3,7 @@ import "./footer.style.scss";
 const Footer = () => {
   return (
     <div className="footer">
-      <span>© 2023 Lyndon Rey. All Rights Reserved.</span>
+      <span>© 2023 Lyndonbualat.co. All Rights Reserved.</span>
     </div>
   );
 };
