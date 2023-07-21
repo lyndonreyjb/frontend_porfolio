@@ -227,13 +227,14 @@
         }
 
         &::-webkit-scrollbar-track {
-            background: #939ea9;
+            background: #484fb6;
             
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: #484fb6;
-            border: 3px solid #484fb6;
+            border-radius: 20px;
+            background-color: #939ea9;
+            border: 3px solid #939ea9;
         }
 
         .project-content {
@@ -249,18 +250,15 @@
                 }
             }
 
-            h1 {
+            h2 {
                 margin-top: 1rem;
-                margin-bottom: 1rem;
-
                 @media only screen and (max-width: 1200px) {
                     font-size: 1.5rem;
                 }
             }
 
             .desc {
-                
-                    font-size: 0.8rem;
+                font-size: 0.8rem;
                 
             }
 

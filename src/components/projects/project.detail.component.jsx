@@ -41,7 +41,7 @@ const ProjectDetail = () => {
                     <img src={imageUrl} alt={title} />
                   </div>
                   <div>
-                    <h1>{title}</h1>
+                    <h2>{title}</h2>
                     <p className="desc">{description}</p>
                     <div className="tags">
                       {tags.map((tag, index) => {
