@@ -5,16 +5,25 @@ import { AiFillGithub } from "react-icons/ai";
 import { HiOutlineExternalLink, HiOutlineXCircle } from "react-icons/hi";
 import { IconContext } from "react-icons";
 import { motion, AnimatePresence } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const ProjectDetail = () => {
   const { selectedItem, setIsOpen, isOpen } = useContext(ProjectContext);
-
+  const isMobile = useMediaQuery({
+    query: "(max-width: 900px)",
+  });
   const handleClose = () => {
     setIsOpen(false);
   };
 
   if (!selectedItem) {
     return null;
+  }
+
+  if (isOpen && isMobile) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
   }
 
   const { title, description, imgUrl, projectLink, codeLink, tags } =
