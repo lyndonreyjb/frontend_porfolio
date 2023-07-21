@@ -1,16 +1,9 @@
 import "./contact.style.scss";
-import { useState } from "react";
+
 import { Wrap } from "../wrap";
 import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
-  // const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = (e) => {
-    setLoading(true);
-  };
-
   return (
     <div className="contact">
       <div className="contact-container">
@@ -33,25 +26,25 @@ const Contact = () => {
         </div>
         <div className="email-container">
           <h2>Send me a message</h2>
-          {/* {!isFormSubmitted ? ( */}
-          <form className="contact-form">
-            <label></label>
+
+          <form
+            target="_blank"
+            action="https://formsubmit.co/lyndonrey724@gmail.com"
+            method="POST"
+            className="contact-form">
+            <label>Name:</label>
+
             <input type="text" name="name" required />
+            <label>Email:</label>
             <input type="email" name="email" required />
-            <button
-              type="submit"
-              className="button-text"
-              onClick={handleSubmit}>
-              {!loading ? "Send Message" : "Sending..."}
+            <label>Message:</label>
+            <div>
+              <textarea name="message" rows="10" required></textarea>
+            </div>
+            <button type="submit" className="button-text">
+              Submit
             </button>
           </form>
-          {/* ) : (
-            <div>
-              <h3 className="success-message ">
-                Thank you for getting in touch!
-              </h3>
-            </div>
-          )} */}
         </div>
       </div>
     </div>
