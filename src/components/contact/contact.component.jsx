@@ -1,36 +1,19 @@
 import "./contact.style.scss";
 import { useState } from "react";
 import { Wrap } from "../wrap";
-import { client } from "../../client";
 import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { name, email, message } = form;
-
-  const handleChangeInput = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
   const handleSubmit = (e) => {
+    e.preventDefault();
     setLoading(true);
-    const contact = {
-      _type: "contact",
-      name: name,
-      email: email,
-      message: message,
-    };
-
-    client
-      .create(contact)
-      .then(() => {
-        setLoading(false);
-        setIsFormSubmitted(true);
-      })
-      .catch((err) => console.log(err));
+    setTimeout(() => {
+      setLoading(false);
+      setIsFormSubmitted(true);
+    }, 2000);
   };
 
   return (
@@ -56,40 +39,25 @@ const Contact = () => {
         <div className="email-container">
           <h2>Send me a message</h2>
           {!isFormSubmitted ? (
-            <div className="contact-form">
+            <form
+              action="https://formsubmit.co/lyndonrey724@email.com"
+              method="POST"
+              className="contact-form">
+              <label>Name:</label>
+              <input type="text" name="name" required />
+              <label>Email:</label>
+              <input type="email" name="email" required />
+              <label>Message:</label>
               <div>
-                <label>Your Name:</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={name}
-                  onChange={handleChangeInput}
-                />
-              </div>
-              <div>
-                <label>Your Email:</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={handleChangeInput}
-                />
-              </div>
-              <div>
-                <label>Your Message:</label>
-                <textarea
-                  value={message}
-                  name="message"
-                  onChange={handleChangeInput}
-                />
+                <textarea name="message" rows="10" required></textarea>
               </div>
               <button
-                type="button"
+                type="submit"
                 className="button-text"
                 onClick={handleSubmit}>
                 {!loading ? "Send Message" : "Sending..."}
               </button>
-            </div>
+            </form>
           ) : (
             <div>
               <h3 className="success-message ">
