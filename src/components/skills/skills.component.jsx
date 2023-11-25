@@ -16,14 +16,16 @@ const Skills = () => {
       </div>
 
       <div className="skills">
-        {skills.map((skills, index) => (
-          <div className="skills-item" key={skills.name + index}>
-            <div>
-              <img src={urlFor(skills.icon)} alt={skills.name} />
-              <p> {skills.name}</p>
+        {skills
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((skill, index) => (
+            <div className="skills-item" key={skill.name + index}>
+              <div>
+                <img src={urlFor(skill.icon)} alt={skill.name} />
+                <p>{skill.name}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );

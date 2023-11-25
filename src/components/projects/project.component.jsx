@@ -4,9 +4,15 @@ const Project = ({ project }) => {
   return (
     <div>
       <div className="projects-page">
-        {project.map((project, index) => {
-          return <ProjectItem key={index} {...project} />;
-        })}
+        {project
+          .sort((a, b) =>
+            a.name && b.name
+              ? a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+              : 0
+          )
+          .map((project, index) => (
+            <ProjectItem key={index} {...project} />
+          ))}
       </div>
     </div>
   );

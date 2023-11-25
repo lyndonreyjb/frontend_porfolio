@@ -9,7 +9,7 @@ const Projects = () => {
   const [project, setProject] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "project"]';
+    const query = '*[_type == "project"] | order(_createdAt desc)';
     client.fetch(query).then((data) => setProject(data));
   }, []);
 
