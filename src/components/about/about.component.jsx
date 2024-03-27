@@ -1,6 +1,6 @@
 import { Wrap } from "../wrap";
 import { FaDownload } from "react-icons/fa";
-import aboutPic from "../../assets/about.jpg";
+// import aboutPic from "../../assets/about.jpg";
 import "./about.style.scss";
 
 import resume from "./resume.pdf";
